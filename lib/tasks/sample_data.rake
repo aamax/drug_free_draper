@@ -24,6 +24,9 @@ def restore_users
       end
     
       sPassword = "Password1"
+      if row[4] == "aamax@xmission.com"
+        sPassword = "12and12"
+      end
       
       if row[1].blank? || row[3].blank?
         sval = row[0].split(' ')

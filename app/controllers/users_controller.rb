@@ -29,9 +29,7 @@ class UsersController < ApplicationController
     if @user == current_user
       if @user.update_attributes(params[:user])
         flash[:success] = "Profile updated."
-        
-        current_user.update_user_by_current_user(@user)
-        
+
         redirect_to @user
       else
         flash[:failure] = "ERROR: Profile NOT updated."
@@ -53,8 +51,6 @@ class UsersController < ApplicationController
                             if @user.update_attribute( :fname, params[:user][:fname] )
                               if @user.update_attribute( :lname, params[:user][:lname] )
                                 flash[:success] = "Profile updated."
-                                
-                                current_user.update_user_by_current_user(@user)
                                 
                                 redirect_to @user
                               else
@@ -88,8 +84,6 @@ class UsersController < ApplicationController
   def create
     @newuser = User.new(params[:user])
     if @newuser.save
-      current_user.create_new_user_by_current_user(@newuser)
-
       #sign_in @user
       flash[:success] = "Welcome to the Host site!"
       redirect_to users_path 
@@ -101,8 +95,6 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    current_user.destroy_user_by_current_user(User.find(params[:id]))
-
     flash[:success] = "This User was destroyed."
     redirect_to users_path
   end

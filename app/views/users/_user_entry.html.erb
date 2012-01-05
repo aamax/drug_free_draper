@@ -17,7 +17,7 @@
 
     <td class="tdgravatar">
       <%= gravatar_for object, :size => 30 %><br />
-      <strong><%= link_to "Email Me", "mailto:" + object.email) %></strong>
+      <strong><%= mail_to object.email, "Email Me" %></strong>
     </td>
   
   <td class="tdnamefield">
@@ -30,8 +30,6 @@
     <% if object == current_user %>
       <%= link_to "edit",  edit_user_path(object), :class => "button" %>
     <% end %>  
-    <br />
-    <strong>Start Date: </strong> <%= object.startdate %>
   </td>    
   <td width="20px">
     <% if object == current_user %>

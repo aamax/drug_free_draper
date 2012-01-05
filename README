@@ -14,11 +14,8 @@ only admin users can delete users.
 specific sites should use this as a starting place and then expand site
 functionality from here.
 
-the current setup is configured to use postgresql
-	the db name is mthost_development or mthost_test for those environments
-		it is configured (for prodution) to work with heroku
-	it's also configured to use environment variables for the user and passwords
-		to keep security out of the repository.
+the current setup is configured to use sqllite for dev and test
+
 		
 PAGES:
 	home - includes headers and footers as well as a partial for

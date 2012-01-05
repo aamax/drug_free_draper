@@ -13,8 +13,8 @@
   <% if current_user.admin? %>
     <td width="20px">
     	<%= link_to "delete", object, :method => :delete, 
-    														:confirm => "You sure?",
-                            		:title => "Delete #{object.name}" %>
+    				:confirm => "You sure?",
+                    :title => "Delete #{object.name}" %>
                             		
     </td>
     <td width="20px">
