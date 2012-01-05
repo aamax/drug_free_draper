@@ -1,0 +1,49 @@
+
+<li>
+  <tr>
+    <td class="tdadmin">
+      <% if object.admin? %>
+       Admin
+      <% else %>    
+        -  
+      <% end %>
+      <br />
+      
+      <% if object.teamleader? %>
+        TeamLead
+      <% else %>    
+        - 
+      <% end %>
+    </td>
+
+    <td class="tdgravatar">
+      <%= gravatar_for object, :size => 30 %><br />
+      <strong><%= link_to "Email Me", send_mail_path(object.email) %></strong>
+    </td>
+  
+  <td class="tdnamefield">
+    <strong><%= link_to object.name, object %></strong> <br />
+    <strong>Home:</strong> <%= object.homephone %> <br />
+    <strong>Cell:</strong> <%= object.cellphone %><br /><br />
+  </td>
+  
+  <td width="20px">
+	<% if current_user != object %>
+    	<%= link_to "delete", object, :method => :delete, 
+	                              :confirm => "You sure you want to delete " + object.name + "?",
+	                              :title => "Delete #{object.name}", 
+	                              :class => "button" %> <br />
+	<% end %>
+  </td>
+  
+  <td width="20px">
+    <%= link_to "edit",  edit_user_path(object), :class => "button" %><br />
+  </td>    
+
+  <td width="20px">
+    <%= link_to "password",  edit_user_path(object) + "?pass=true", 
+            :class => "button" %><br />
+    <strong>Start Date: </strong> <%= object.startdate %><br />
+  </td>    
+  </tr>
+</li>

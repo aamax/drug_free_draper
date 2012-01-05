@@ -1,0 +1,25 @@
+<li>
+  <% if object.admin? %>
+    <td width="15px">Admin</td>
+    </td>
+ <% else %>    
+ 		<td> - </td>
+ <% end %>
+
+	<td width="10px"><%= gravatar_for object, :size => 30 %></td>
+  <td width="25px"><%= link_to object.name, object %></td>
+  
+  
+  <% if current_user.admin? %>
+    <td width="20px">
+    	<%= link_to "delete", object, :method => :delete, 
+    														:confirm => "You sure?",
+                            		:title => "Delete #{object.name}" %>
+                            		
+    </td>
+    <td width="20px">
+    	<%= link_to "edit",  edit_user_path(object) %>
+    </td>
+  <% end %>
+  
+</li>

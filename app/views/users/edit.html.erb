@@ -1,0 +1,99 @@
+<h1>Edit user</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+   
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :fname %>
+    <%= f.text_field :fname %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :lname %>
+    <%= f.text_field :lname %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>        
+  
+  <div class="field">
+    <%= f.label :street %>
+    <%= f.text_field :street, :size => 40 %>
+  </div>
+  
+  <table>
+    <td>
+    <div class="field">
+      <%= f.label :city %>, 
+      <%= f.text_field :city %>
+    </div>
+    </td>
+    <td>
+    <div class="field">
+      <%= f.label :state %>, 
+      <%= f.text_field :state, :size => 3 %>
+    </div>
+    </td>
+    <td>
+    <div class="field">
+      <%= f.label :zip %>, 
+      <%= f.text_field :zip, :size => 5 %>
+    </div>
+    </td>
+  </table>
+   
+  <div class="field">
+    <%= f.label :homephone %>
+    <%= f.text_field :homephone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cellphone %>
+    <%= f.text_field :cellphone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :startdate %> (YYYY)
+    <%= f.text_field :startdate %>
+  </div>
+  
+  <% if ((@user == current_user) || (!params[:pass].blank?)) %>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+  <% end %>
+  
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= f.label :admin, "Administrator" %><br />
+      <%= f.check_box :admin %>
+    </div>
+    <div class="field">
+      <%= f.label :teamleader, "Team Leader" %><br />
+      <%= f.check_box :teamleader %>
+    </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>  
+<% end %>
+
+<div>
+  <%= gravatar_for @user %>
+  <a href="http://gravatar.com/emails" target="_blank">change</a>
+</div>
+
+

@@ -1,0 +1,8 @@
+rake db:migrate
+rake db:test:prepare
+git rm -r spec/views
+git rm -r spec/helpers
+
+rake db:realpopulate
+
+

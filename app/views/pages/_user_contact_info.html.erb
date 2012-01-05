@@ -1,0 +1,12 @@
+<td>
+	<%= object.name %>
+</td>
+<td>
+	<%= object.homephone %>
+</td>
+<td>
+	<%= object.cellphone %>
+</td>
+<td>
+	<%= link_to object.email, send_mail_path(object.email) %>
+</td>

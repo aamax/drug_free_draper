@@ -1,0 +1,48 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </td>
+
+    <td class="sidebar round" rowspan="2">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <br />
+      
+      <% if @user.admin? %>
+        - Administrator -        
+     <% else %>    
+        - Normal Member -
+     <% end %><br />
+     <% if @user.teamleader? %>
+        - Team Leader - 
+     <% end %>        
+      <br />
+      <strong>Start Date:</strong> <%= @user.startdate %> <br />
+     </td>
+  </tr>
+  <tr>
+    <td class="sidebar round">
+      <h3>Address: </h3>
+      <%= @user.street %><br />
+      <%= @user.city %>
+      <% if !@user.city.blank? %>, <% end %> <%= @user.state %> <%= @user.zip %><br />
+      <strong>HOME:</strong> <%= @user.homephone %> <br />
+      <strong>CELL:</strong> <%= @user.cellphone %>       
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong><%= link_to "Edit User Info", edit_user_path(@user) %></strong>
+    </td>
+  </tr>
+</table>
+<br />
+
+  
+
+
+

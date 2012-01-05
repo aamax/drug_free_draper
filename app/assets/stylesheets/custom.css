@@ -1,0 +1,371 @@
+.shifttypeselect {
+  width: 100px;
+}
+
+.filter_date {
+ font: 12px Courier; 
+}
+
+.homepagepic {
+  vertical-align: top;
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  
+  background: #ffc;
+}
+
+.homepagebottom {
+  background: #FFFFFF;
+}
+
+.homepagetable {
+  background: #ffc;
+}
+
+td.homepagepic {
+  background: #ffc;
+}
+
+table.weather, th.weather, td.weather
+{
+border: 1px solid black;
+}
+
+td.homesidebar {
+  width: 475px;
+  padding: 2px;
+  vertical-align: top;
+ 
+  background: #ffc;
+}
+
+td.yellowcardtitlerow {
+  font-weight: bold;
+}
+
+h3, h1, h2 {
+  font-weight: bold;
+}
+
+table.usershiftreport {
+  width: 400px;
+}
+
+td.shiftrepvalue {
+  text-align: center;
+}
+
+table.indexbydate {
+  width: 770px;
+}
+
+table.indexmenutable {
+  background: #ffc;
+}
+
+.usergroup {
+  text-align: left;
+  padding: 0px;
+  vert-align: top;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  
+}
+
+.datebutton {
+  font: bold 8px Courier;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 4px 2px 4px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.entrydivider {
+  font-weight: bold;
+  background-color: #7F7F7F;
+  height: 3px;
+  padding: 0;
+  
+}
+
+.headerbanner {
+  width: 800px;
+  height: 100px;
+  padding: 0 0 0 0;
+}
+
+.headerrow {
+  font-weight: bold;
+}
+
+.alignright {
+  font-weight: bold;
+  text-align: right;
+}
+
+h4 {font-size:1.5em;line-height:1.25;margin-bottom:.1em;}
+
+.container {
+  width: 800px;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+div.readonlyfield {
+  margin-bottom: 10px;
+}
+
+body {
+  background: #cff;
+}
+
+
+header {
+  padding-top: 0px;
+}
+
+header img {
+  padding: 1em;
+  background: #fff;
+}
+
+section {
+  margin-top: 1em;
+  font_size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%
+}
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0; 
+}
+
+nav ul li {
+  list-stle-type: none;
+  display: inline-block;
+  padding: 0.2em 10px;
+}
+
+nav ul li a {
+  padding: 0 5 px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.round {
+  -moz-border-radius:  10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.UserName {
+  font-size: 150%;
+  font-weight: bold;
+  padding: 0px 20px;
+  color: #000;
+}
+
+footer {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;  
+}
+
+/* User show page */
+
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.tdadmin {
+  width: 10px;
+}
+
+.tdgravatar {
+  width: 40px;
+  text-align: center;
+}
+
+.tdnamefield {
+  width: 100px;
+}
+
+td.main {
+  width: 70%;
+  padding: 1em;
+}
+
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+ 
+  background: #ffc;
+}
+
+td.filterbar {
+  padding: 0em;
+  vertical-align: center;
+  text-align: center;
+  background: #ffc;
+}
+
+td.dateindexmain {
+  width: 590px;
+  padding: 1em;
+  vertical-align: top;
+ 
+  background: #ffc;
+}
+
+table.datecolumn {
+  padding: 0em;  
+}
+
+td.datecolumn {
+  width: 75px;
+  padding: 0px;
+  vertical-align: top;
+ 
+  background: #FFFFFF;
+}
+
+td.menubar {
+  width: 25%;
+  padding: 1em;
+  vertical-align: top;
+  text-align: center;
+  background: #ffc;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+ul.users {
+  margin-top: 1em;
+}
+
+.users li {
+  list-style: none;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.microposts {
+  font-size: 80%;
+}
