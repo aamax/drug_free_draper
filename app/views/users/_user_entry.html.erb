@@ -28,14 +28,8 @@
      
   <td width="20px">
     <% if object == current_user %>
-      <%= link_to "edit",  edit_user_path(object), :class => "button" %>
+      <%= link_to "edit",  edit_user_path(object) + "?pass=true", :class => "button" %>
     <% end %>  
   </td>    
-  <td width="20px">
-    <% if object == current_user %>
-      <%= link_to "password",  edit_user_path(object) + "?pass=true", 
-            :class => "button" %>
-      <% end %>  <br />
-  </td> 
   </tr>
 </li>

@@ -26,58 +26,29 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user == current_user
+    
+    # if current user or admin then
+    if (@user == current_user) || current_user.admin?
+      # clear out password if blank
+      if (params[:user][:password] == "")
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+        
+      # update model entry with validation
       if @user.update_attributes(params[:user])
         flash[:success] = "Profile updated."
-
-        redirect_to @user
+        
+        redirect_to @user 
       else
         flash[:failure] = "ERROR: Profile NOT updated."
         @title = "Edit user"
         render :action => "edit"
-      end
-    else  
-      if current_user.admin?
-        if @user.update_attribute( :name, params[:user][:name])
-          if @user.update_attribute( :email, params[:user][:email] )          
-            if @user.update_attribute( :admin, params[:user][:admin] )
-              if @user.update_attribute( :teamleader, params[:user][:teamleader] )
-                if @user.update_attribute( :street, params[:user][:street] )
-                  if @user.update_attribute( :city, params[:user][:city] )
-                    if @user.update_attribute( :state, params[:user][:state] )
-                      if @user.update_attribute( :zip, params[:user][:zip] )
-                        if @user.update_attribute( :login, params[:user][:login] )
-                          if @user.update_attribute( :startdate, params[:user][:startdate] )
-                            if @user.update_attribute( :fname, params[:user][:fname] )
-                              if @user.update_attribute( :lname, params[:user][:lname] )
-                                flash[:success] = "Profile updated."
-                                
-                                redirect_to @user
-                              else
-                                flash[:failure] = "ERROR: Profile NOT updated."
-                                @title = "Edit user"
-                                render :action => "edit"
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end              
-            end
-          end
-        else
-          flash[:failure] = "ERROR: Profile NOT updated."
-          @title = "Edit user"
-          render :action => "edit"        
-        end      
-      else
-        flash[:failure] = "ERROR: Profile NOT updated."
-        @title = "Edit user"
-        render :action => "edit"
-      end 
+      end        
+    else
+      # show not be updated and redirect to home page
+      flash[:failure] = "Profile NOT updated.  You must be the user or an administrator."
+      redirect to home_path
     end
   end
   

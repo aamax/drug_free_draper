@@ -63,18 +63,16 @@
     <%= f.label :startdate %> (YYYY)
     <%= f.text_field :startdate %>
   </div>
-  
-  <% if ((@user == current_user) || (!params[:pass].blank?)) %>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation, "Confirmation" %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-  <% end %>
-  
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
   <% if current_user.admin? %>
     <div class="field">
       <%= f.label :admin, "Administrator" %><br />

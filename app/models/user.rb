@@ -47,9 +47,10 @@ class User < ActiveRecord::Base
             :format => { :with => email_regex },
             :uniqueness => { :case_sensitive => false }
       
-  validates   :password,  :presence => true,
-                :confirmation => true,
-                :length => { :within => 6..40 } 
+  validates   :password,  :presence => true, :on => :create
+  
+   validates   :password,  :confirmation => true ,
+                 :length => { :within => 6..40 }, :if => :password_is_not_blank?
                 
   validates   :startdate, :presence => true,
               :format => { :with => startdate_regex }
@@ -59,6 +60,10 @@ class User < ActiveRecord::Base
     
   default_scope :order => "name asc" 
     
+  def password_is_not_blank?
+    !password.blank?
+  end
+  
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
