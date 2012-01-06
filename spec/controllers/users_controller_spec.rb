@@ -14,7 +14,7 @@ describe UsersController do
       end
     end
     
-    describe "for signed-in users" do
+    describe "for signed-in " do
       before(:each) do
         @user = test_sign_in(Factory(:user, :name => "zzzzzz"))
         second = Factory( :user, :name => "Bob", 
@@ -39,7 +39,7 @@ describe UsersController do
         end
       end
       
-      describe "for admin users" do
+      describe " admin users" do
         before(:each) do
           @adminuser = Factory(:user, :email => "admin@example.com", 
                                 :admin => true, :startdate => "2010",
@@ -62,10 +62,6 @@ describe UsersController do
           response.should have_selector("a", :content => "New User")
         end
 
-        it "password link should be present to allow admin user to reset passwords" do
-          get :index
-          response.should have_selector("a", :content => "password")
-        end   
       end
 
       describe "for NON-admin users" do
@@ -96,22 +92,7 @@ describe UsersController do
           response.should have_selector("li", :content => user.name)
         end
       end
-
-      # it "should paginate users" do
-      #   get :index
-      #   response.should have_selector("div.pagination")
-      #   response.should have_selector("span.disabled", :content => "Previous")
-      #   response.should have_selector("a", :href => "/users?page=2",
-      #                                      :content => "2")
-      #   response.should have_selector("a", :href => "/users?page=2",
-      #                                      :content => "Next")
-      # end
-    end # for signed in users
-# -----------------    
-    it "password link should not be present for users other than the current one" 
-        
-    it "edit link should not be present for users other than the current one"
-# -----------------    
+    end
   end # get 'index'
     
   describe "GET 'show'" do
@@ -435,13 +416,11 @@ describe UsersController do
   end 
   
   describe "authentication of edit/update pages" do
-
     before(:each) do
       @user = Factory(:user)
     end
 
     describe "for non-signed-in users" do
-
       it "should deny access to 'edit'" do
         get :edit, :id => @user
         response.should redirect_to(signin_path)
@@ -453,18 +432,13 @@ describe UsersController do
       end
     end   
     
-    describe "for signed in users" do
+    describe "for signed in users - current user edit/update" do
       before(:each) do
         test_sign_in(@user)       
       end
       
       it "should be successful for access to edit" do
         get :edit, :id => @user
-        response.should be_success
-      end
-      
-      it "should be successful for access to update" do
-        put :update, :id => @user, :user => {}
         response.should be_success
       end
       
@@ -478,6 +452,25 @@ describe UsersController do
         response.should render_template(@user)  
       end
     end
+    
+    describe "for signed-in users - wrong user " do
+
+      before(:each) do
+        wrong_user = Factory(:user, :email => "user@example.net")
+        test_sign_in(wrong_user)
+      end
+
+      it "should require matching users for 'edit'" do
+        get :edit, :id => @user
+        response.should redirect_to(root_path)
+      end
+
+      it "should require matching users for 'update'" do
+        put :update, :id => @user, :user => {}
+        response.should redirect_to(root_path)
+      end
+    end
+
   end
 
   describe "DELETE 'destroy'" do
@@ -502,7 +495,6 @@ describe UsersController do
     end
 
     describe "as an admin user" do
-
       before(:each) do
         @admin = Factory(:user, :email => "admin@example.com", :admin => true)
         test_sign_in(@admin)
@@ -527,5 +519,4 @@ describe UsersController do
       end
     end
   end
-
 end

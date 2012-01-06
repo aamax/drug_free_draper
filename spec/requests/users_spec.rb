@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe "Users" do
-	it ": the requests/users_spec.rb tests should all work..."
-	
-	
 	
 #	describe "update" do
 #		describe "success" do
