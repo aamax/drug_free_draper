@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("header1.jpg", :alt => "LOGO",
+    image_tag("logo.jpeg", :alt => "LOGO",
                              :class => "headerbanner")  
   end
     

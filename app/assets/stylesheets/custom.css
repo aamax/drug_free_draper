@@ -104,9 +104,9 @@ table.indexmenutable {
 }
 
 .headerbanner {
-  width: 800px;
-  height: 100px;
-  padding: 0 0 0 0;
+  padding: 0px;
+  vertical-align: top;
+  text-align: left;
 }
 
 .headerrow {
@@ -133,7 +133,7 @@ div.readonlyfield {
 }
 
 body {
-  background: #cff;
+  background: white; //#cff;
 }
 
 
@@ -142,7 +142,7 @@ header {
 }
 
 header img {
-  padding: 1em;
+  padding: 0;
   background: #fff;
 }
 
@@ -194,7 +194,7 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0 5 px;
+  padding: 0  px;
   font-weight: bold;
 }
 
@@ -226,6 +226,7 @@ footer {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #ffc;
 }
 
 footer nav {

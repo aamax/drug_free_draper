@@ -10,12 +10,12 @@ namespace :db do
 end
 
 def restore_users
-  filename = "../userdata.csv"
+  filename = "../drugfreedraper_users.csv"
 
   if File.exists?(filename) 
     puts "Loading Users From File #{filename}"
 
-    bpastHeader = false
+    bpastHeader = true
     
     CSV.foreach(filename) do |row|
       if !bpastHeader
