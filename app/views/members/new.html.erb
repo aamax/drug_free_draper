@@ -1,2 +1,31 @@
-<h1>Members#new</h1>
-<p>Find me in app/views/members/new.html.erb</p>
+<h1>Create Member</h1>
+
+<h4> Sign up to get involved and/or receive notices for Drug Free Draper events etc.</h4>
+<br />
+<%= form_for(@newmember) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+   
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>        
+  
+  <div class="field">
+    <%= f.label :service, "Service Opportunity Notification" %><br />
+    <%= f.check_box :service %>
+  </div>
+
+  <div class="field">
+    <%= f.label :events, "Event Notification" %><br />
+    <%= f.check_box :events %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>  
+<% end %>

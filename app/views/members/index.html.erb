@@ -1,2 +1,11 @@
-<h1>Members#index</h1>
-<p>Find me in app/views/members/index.html.erb</p>
+<h1>All Members</h1>
+
+<ul class="users">
+
+<table>  
+  <% @members.each do |mbr| %>
+    <%= render 'member_entry', :object => mbr %>
+  <% end %>
+</table>  
+
+</ul>

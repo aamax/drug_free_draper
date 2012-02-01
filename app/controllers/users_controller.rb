@@ -78,6 +78,7 @@ class UsersController < ApplicationController
     end
   
     def admin_user
+      redirect_to(root_path) if current_user.nil?
       redirect_to(root_path) unless current_user.admin?
     end
       
@@ -87,6 +88,5 @@ class UsersController < ApplicationController
         flash[:failure] = "You may not delete yourself..."
         redirect_to(root_path)
       end
-    end
-    
+    end    
 end

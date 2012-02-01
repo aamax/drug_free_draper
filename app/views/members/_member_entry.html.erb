@@ -1,0 +1,36 @@
+<li>
+  <tr>
+    <td class="tdgravatar">
+      <%= gravatar_for object, :size => 30 %>
+    </td>
+  
+  <td class="tdnamefield">
+    <strong><%= object.name %></strong> 
+  </td>
+     
+  <td >
+	<strong><%= mail_to object.email, object.email %></strong>
+  </td>  
+
+  <td >
+	<% if object.service %>
+		Notify about Service Opportunities
+	<% end %>
+  </td>  
+
+  <td >
+	<% if object.events %>
+		Notify about DFD Events
+	<% end %>
+  </td>  
+
+  <td>
+  	<%= 
+      link_to "delete", member_path(object), 
+                        :method => :delete,
+                        :confirm => "You sure you want to delete this member?",
+                        :class => "button", 
+                        :title => "Delete" %>
+  </td>
+  </tr>
+</li>

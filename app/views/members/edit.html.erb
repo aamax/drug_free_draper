@@ -1,2 +1,29 @@
-<h1>Members#edit</h1>
-<p>Find me in app/views/members/edit.html.erb</p>
+<h1>Edit Member</h1>
+
+<%= form_for(@member) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+   
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>        
+  
+  <div class="field">
+    <%= f.label :service, "Service Opportunity Notification" %><br />
+    <%= f.check_box :service %>
+  </div>
+
+  <div class="field">
+    <%= f.label :events, "Event Notification" %><br />
+    <%= f.check_box :events %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>  
+<% end %>

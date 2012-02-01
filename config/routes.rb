@@ -10,6 +10,7 @@ Newsample::Application.routes.draw do
   match '/create_member', :to => 'members#new'
   match '/edit_member', :to => 'members#edit'
   match '/list_members', :to => 'members#index'
+  match '/add_member', :to => 'members#new'
   
   match '/construction', :to => "pages#construction"
   root :to => 'pages#home'
