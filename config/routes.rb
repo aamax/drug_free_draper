@@ -1,4 +1,10 @@
 Newsample::Application.routes.draw do
+  get "members/new"
+
+  get "members/edit"
+
+  get "members/index"
+
   resources :users 
   resources :sessions, :only => [:new, :create, :destroy]
   
