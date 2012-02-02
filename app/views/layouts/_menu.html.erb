@@ -1,0 +1,15 @@
+<!-- Grey Menu -->
+<div id="menu_wrapper" class="blue">
+	<div class="left"></div>
+	<ul id="menu">
+		<% if signed_in? %>
+		    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+			<li><%= link_to "Administration", construction_path %></li>
+			<li><%= link_to "Users", users_path %></li>
+			<li><%= link_to "Mailing List", list_members_path %></li>
+		<% else %>
+		<li><%= link_to "Sign in", signin_path %></li>
+		<li><%= link_to "Contact Us", contact_path %></li>
+		<% end %>
+	</ul>
+</div>

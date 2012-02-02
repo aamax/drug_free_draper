@@ -1,35 +1,10 @@
 <header>
-  <table>
-	<tr>
-		<td><%= link_to logo, root_path %></td>
-		<td>
-		  <nav>
-		    <ul>      
-		      <li><%= link_to "Home", root_path %></li>
+	<%= link_to logo, root_path %>
+	<%= render 'layouts/menu' %>
 
-		      <% if signed_in? %>
-		        <li><%= link_to "Users", users_path %></li> 
-
-		        <% if current_user.admin? %>
-		          <li><%= link_to "Members", list_members_path %></li>
-		        <% end %>
-
-		        <li><%= link_to "My Profile", current_user %></li>
-		        <li><%= link_to "About", about_path %></li>
-		        <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-		      <% else %>      
-		        <li><%= link_to "About", about_path %></li>
-		        <li><%= link_to "Sign in", signin_path %></li>
-		      <% end %>
-		    </ul>
-		  </nav>
-		<br /> 
 		  <% if signed_in? %>
 		    <div class="UserName">
 		      <%= link_to "Hello " + current_user.fname.titleize + "!", current_user %>
 		    </div>
 		  <% end %>
-		</td>
-	</tr>
-  </table>  
 </header>
