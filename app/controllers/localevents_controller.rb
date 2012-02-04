@@ -1,4 +1,6 @@
 class LocaleventsController < ApplicationController
+  before_filter :admin_user,  :only => [:new, :create, :destroy, :edit]
+
   def new
   end
 
@@ -6,6 +8,8 @@ class LocaleventsController < ApplicationController
   end
 
   def index
+    @title = "Drug Free Draper Events"
+    @events = Localevent.all
   end
 
   def show

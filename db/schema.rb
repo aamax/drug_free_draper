@@ -12,18 +12,6 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20120204054721) do
-
-  create_table "events", :force => true do |t|
-    t.datetime "when"
-    t.string   "name"
-    t.string   "description"
-    t.string   "location"
-    t.string   "contact"
-    t.string   "website"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "localevents", :force => true do |t|
     t.datetime "when"
     t.string   "location"
