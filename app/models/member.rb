@@ -10,6 +10,19 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
+
+# == Schema Information
+#
+# Table name: members
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  service    :boolean
+#  events     :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#
 require 'digest'
 
 class Member < ActiveRecord::Base

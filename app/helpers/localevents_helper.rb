@@ -1,0 +1,2 @@
+module LocaleventsHelper
+end

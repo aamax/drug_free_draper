@@ -1,4 +1,12 @@
 Newsample::Application.routes.draw do
+  get "localevents/new"
+
+  get "localevents/edit"
+
+  get "localevents/index"
+
+  get "localevents/show"
+
   resources :users 
   resources :sessions, :only => [:new, :create, :destroy]
   resources :members
