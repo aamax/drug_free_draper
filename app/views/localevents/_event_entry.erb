@@ -1,22 +1,28 @@
 <tr>
-	<td width="200px">
-	    <strong>Name: </strong><%= object.name %><br />
-		<strong>Date: </strong><%= object.when %><br />
-		<strong>Location: </strong><%= object.location %><br />
+	<td width="200px" class="eventcolumn">
+	    <strong>Name: </strong><br />
+		<%= object.name %><br /><br />
+		<strong>Date/Time: </strong><%= object.when %><br />
+		<strong>Location: </strong><%= object.location %>
+		<br />
 	</td>
 	<td>
-		<strong>Description: </strong><%= object.description %><br />
+		<strong>Description: </strong><%=simple_format h object.description %>
+		
 		<strong>Contact Info: </strong><%= object.contact %><br />
 		<strong>WebSite: </strong><%= object.website %><br />
 	</td>
 </tr>
 <tr>
-	<td colspan=2>
+	<td colspan=2 class="eventcolumn">
 		<% if !current_user.nil? %>
 			<%= link_to "delete", object, :method => :delete, 
 	                    :confirm => "You sure you want to delete this event?",
-	                    :title => "Delete #{object.id}", :class => "button" %><br />
+	                    :title => "Delete #{object.id}", :class => "button" %>
 		
+			<%= link_to "edit", edit_event_path(object), :class => "button" %>
+		<br />
+
 		<% end %>
 		
 	</td>

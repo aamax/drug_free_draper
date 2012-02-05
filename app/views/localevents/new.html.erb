@@ -1,10 +1,12 @@
 <h1>Create New Event Entry</h1>
+<br />
 
 <% if current_user.admin? %>
   <%= form_for(@newevent) do |f| %>
   
     <%= render 'shared/error_messages', :object => f.object %>
-
+    <table><tr>
+	<td class="eventcolumn">
     <div class="field">
       <%= f.label :when %><br />
       <%= f.text_field :when %>
@@ -18,18 +20,22 @@
       <%= f.text_field :contact %>
     </div>
     <div class="field">
+      <%= f.label :website %><br />
+      <%= f.text_field :website, :maxlength=>'40' %>
+    </div>
+    </td class="eventcolumn">
+	<td>
+    <div class="field">
       <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :maxlength=>'40' %>
     </div>
     <div class="field">
       <%= f.label :description %><br />
-      <%= f.text_field :description %>
+	  <%= f.text_area :description, :size => "60x12" %>
     </div>
-    <div class="field">
-      <%= f.label :website %><br />
-      <%= f.text_field :website %>
-    </div>
-  
+    </td>
+	</tr>
+	</table>
     <div class="actions">
       <%= f.submit "Submit" %>
     </div>

@@ -7,8 +7,8 @@ class LocaleventsController < ApplicationController
   end
   
   def edit
-    @title = "Edit Event"
-    @event = Localevent.find(params[:id])
+    @title = "Edit Event"    
+    @event = Localevent.find(params[:format])
   end
 
   def show

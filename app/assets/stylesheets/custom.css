@@ -10,6 +10,10 @@
  font: 12px Courier; 
 }
 
+.eventcolumn {
+	vertical-align: top;
+}
+
 .homepagepic {
   vertical-align: top;
   padding: 2px;
