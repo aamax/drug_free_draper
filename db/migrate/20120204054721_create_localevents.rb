@@ -1,7 +1,8 @@
 class CreateLocalevents < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :localevents do |t|
-      t.datetime :when
+      t.string :when
+      t.string :time
       t.string :location
       t.string :contact
       t.string :name
@@ -10,5 +11,9 @@ class CreateLocalevents < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+  
+  def self.down
+    drop_table :localevents
   end
 end

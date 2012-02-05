@@ -1,2 +1,11 @@
-<h1>Localevents#index</h1>
-<p>Find me in app/views/localevents/index.html.erb</p>
+<h1>Current Local Event Listing</h1>
+
+<ul class="users">
+	<table>
+	<% 
+	@events.each do |event| %>
+		<%= render 'event_entry', :object => event %>
+	<% end %>
+	</table>
+</ul>
+

@@ -17,14 +17,14 @@
   <tr>
     <td>
 	<h4>Upcoming Events</h4>
-	event list from Data Base
+		<table>  
+		  <% 
+			@events = Localevent.all
+			@events.each do |event| %>
+		    <%= render 'localevents/event_entry', :object => event %>
+		  <% end %>
+		</table>  
 	
-	</td>
-	
-	<td>
-	<h4>Resources</h4>
-	links and descriptions from Data Base
-		
 	</td>
   </tr>	
 </table>

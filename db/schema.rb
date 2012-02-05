@@ -12,8 +12,10 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20120204054721) do
+
   create_table "localevents", :force => true do |t|
-    t.datetime "when"
+    t.string   "when"
+    t.string   "time"
     t.string   "location"
     t.string   "contact"
     t.string   "name"

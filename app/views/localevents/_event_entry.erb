@@ -1,0 +1,23 @@
+<tr>
+	<td width="200px">
+	    <strong>Name: </strong><%= object.name %><br />
+		<strong>Date: </strong><%= object.when %><br />
+		<strong>Location: </strong><%= object.location %><br />
+	</td>
+	<td>
+		<strong>Description: </strong><%= object.description %><br />
+		<strong>Contact Info: </strong><%= object.contact %><br />
+		<strong>WebSite: </strong><%= object.website %><br />
+	</td>
+</tr>
+<tr>
+	<td colspan=2>
+		<% if !current_user.nil? %>
+			<%= link_to "delete", object, :method => :delete, 
+	                    :confirm => "You sure you want to delete this event?",
+	                    :title => "Delete #{object.id}", :class => "button" %><br />
+		
+		<% end %>
+		
+	</td>
+</tr>

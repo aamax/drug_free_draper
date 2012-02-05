@@ -4,10 +4,12 @@ Newsample::Application.routes.draw do
   resources :members
   resources :localevents
   
-  match '/contact', :to => 'pages#about'
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy' 
+
+  match '/contact', :to => 'pages#about'
+  
   match '/create_member', :to => 'members#new'
   match '/edit_member', :to => 'members#edit'
   match '/list_members', :to => 'members#index'
@@ -18,6 +20,7 @@ Newsample::Application.routes.draw do
   match '/list_events', :to => 'localevents#index'
   match '/edit_event', :to => 'localevents#edit'
   
+  match '/admin', :to => 'pages#admin'
   match '/construction', :to => "pages#construction"
   root :to => 'pages#home'
 end

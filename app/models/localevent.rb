@@ -3,7 +3,8 @@
 # Table name: localevents
 #
 #  id          :integer         not null, primary key
-#  when        :datetime
+#  when        :string(255)
+#  time        :string(255)
 #  location    :string(255)
 #  contact     :string(255)
 #  name        :string(255)

@@ -1,2 +1,39 @@
-<h1>Localevents#new</h1>
-<p>Find me in app/views/localevents/new.html.erb</p>
+<h1>Create New Event Entry</h1>
+
+<% if current_user.admin? %>
+  <%= form_for(@newevent) do |f| %>
+  
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div class="field">
+      <%= f.label :when %><br />
+      <%= f.text_field :when %>
+    </div>
+    <div class="field">
+      <%= f.label :location %><br />
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :contact %><br />
+      <%= f.text_field :contact %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :website %><br />
+      <%= f.text_field :website %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+<% else %>
+  Only Administrators Can Create A New Event...
+<% end %>
