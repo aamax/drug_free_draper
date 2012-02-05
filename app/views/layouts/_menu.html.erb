@@ -8,10 +8,11 @@
 			<li><%= link_to "Users", users_path %></li>
 			<li><%= link_to "Mailing List", list_members_path %></li>
 			<li><%= link_to "Events List", list_events_path %></li>
+			<li><%= link_to "Resource List", list_resources_path %></li>
 		<% else %>
-		<li><%= link_to "Sign in", signin_path %></li>
-		<li><%= link_to "Contact Us", contact_path %></li>
-		<li><%= link_to "Resources", construction_path %></li>
+			<li><%= link_to "Sign in", signin_path %></li>
+			<li><%= link_to "Contact Us", contact_path %></li>
+			<li><%= link_to "Resources", list_resources_path %></li>
 		<% end %>
 	</ul>
 </div>
