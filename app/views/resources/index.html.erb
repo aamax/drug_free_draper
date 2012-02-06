@@ -1,2 +1,12 @@
-<h1>Resources#index</h1>
-<p>Find me in app/views/resources/index.html.erb</p>
+<h1>Drug Free Draper Resource Listing</h1>
+<br />
+<%= link_to "Add New Resource", add_resource_path %>
+
+<ul class="users">
+	<table>
+	<% 
+	@resources.each do |resource| %>
+		<%= render 'resource_entry', :object => resource %>
+	<% end %>
+	</table>
+</ul>
