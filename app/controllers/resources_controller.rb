@@ -8,7 +8,7 @@ class ResourcesController < ApplicationController
   
   def edit
     @title = "Edit Resource"    
-    @resource = Resource.find(params[:format])
+    @resource = Resource.find(params[:id])
   end
 
   def index
@@ -20,10 +20,10 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     
     # update model entry with validation
-    if @event.update_attributes(params[:resource])
+    if @resource.update_attributes(params[:resource])
       flash[:success] = "Resource updated."
       
-      redirect_to @event 
+      redirect_to list_resources_path
     else
       flash[:failure] = "ERROR: Resource NOT updated."
       @title = "Edit Resource"

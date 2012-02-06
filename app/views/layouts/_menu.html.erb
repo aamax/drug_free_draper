@@ -4,7 +4,6 @@
 	<ul id="menu">
 		<% if signed_in? %>
 		    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-			<li><%= link_to "Administration", admin_path %></li>
 			<li><%= link_to "Users", users_path %></li>
 			<li><%= link_to "Mailing List", list_members_path %></li>
 			<li><%= link_to "Events List", list_events_path %></li>

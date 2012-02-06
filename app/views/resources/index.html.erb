@@ -1,7 +1,8 @@
 <h1>Drug Free Draper Resource Listing</h1>
 <br />
-<%= link_to "Add New Resource", add_resource_path %>
-
+<% if !current_user.nil? && current_user.admin? %>
+	<%= link_to "Add New Resource", add_resource_path %>
+<% end %>
 <ul class="users">
 	<table>
 	<% 
